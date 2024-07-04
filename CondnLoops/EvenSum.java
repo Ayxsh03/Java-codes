@@ -10,11 +10,6 @@ public class EvenSum {
             sum=sum+i;
             i++;
         }
-        // int j=2;
-        // while (j<=n) {
-        //     sum=sum+j;
-        //     j+=2;
-        // }
         System.out.println(sum);
     }
 }
