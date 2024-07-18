@@ -23,7 +23,17 @@ public class rowtraversal {
         }
         return ans;
     }
-    
+    //row wise sum
+    public static void rowWiseSum(int[][] arr){
+        for(int i=0;i<arr.length;i++){
+            int sum=0;
+            for(int j=0;j<arr[i].length;j++){
+                sum=sum+arr[i][j];
+                
+            }
+            System.out.print(sum+" ");
+        }    
+    }
     public static void main(String[] args) {
         int [][]arr={{1,2,7},{2,3,8},{3,4,9}};
         //method1
@@ -34,5 +44,8 @@ public class rowtraversal {
         for(int i=0;i<ans.length;i++){
             System.out.print(ans[i]+" ");
         }
+        
+        System.out.println();
+        rowWiseSum(arr);
     }
 }
