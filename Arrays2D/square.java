@@ -15,10 +15,11 @@ public class square {
         }
         if(rows==cols){
             for(int i=0;i<rows;i++){
-                for(int j=0;j<cols;j++){
-                    System.out.println(arr[j][j]);
-                }
+                System.out.println(arr[i][i]);
             }
+        }
+        else{
+            System.out.println("Matrix is not square");
         }
     }
 }
