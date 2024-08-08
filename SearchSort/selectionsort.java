@@ -20,12 +20,32 @@ public class selectionsort {
             
         }
     }
+    //so easy?
+    public static void selectionShort(int arr[]){
+        for(int i=0;i<arr.length-1;i++){
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[j]<arr[i]){
+                    int temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            }
+        }
+    }
     public static void main(String[] args) {
         int arr[]={1,6,4,8,9,2,6,4,9,10};
         selection(arr);
         for(int i=0;i<arr.length;i++){
             System.out.print(arr[i]+" ");
         }
+        System.out.println();
+
+        int arr2[]={1,6,4,8,9,2,6,4,9,10};
+        selectionShort(arr2);
+        for(int i=0;i<arr2.length;i++){
+            System.out.print(arr2[i]+" ");
+        }
+
     }
 
     //Stackoverflow
