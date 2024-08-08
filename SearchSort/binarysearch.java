@@ -1,4 +1,4 @@
-package Java.Sorting;
+package SearchSort;
 
 public class binarysearch {
     public static int binaryIterative(int []arr, int n){
