@@ -189,6 +189,11 @@ public class patterns {
     }
 
     public static void nBinaryTriangle(int n) {
+        /*
+         1
+         0 1
+         1 0 1 
+        */
         int start=1;
         for(int i=1;i<=n;i++){
             if(i%2==0){
