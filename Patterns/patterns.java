@@ -159,9 +159,9 @@ public class patterns {
     public static void rotatedtriangle(int n){
         /*
         *    
-        **   
-        ***
-        **   
+        * *   
+        * * *
+        * *   
         *    
         */
         // //first half
