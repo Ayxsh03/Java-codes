@@ -1,8 +1,5 @@
 package Patterns;
 
-import DataStructures.LinkedList.segregate012;
-import Strings.stringbuffer;
-
 public class patterns2 {
     
     public static void numberCrown(int n){
