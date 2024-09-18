@@ -119,6 +119,7 @@ public class implementation {
             }
             else{ //key exist
                 Node node = buckets[bucketIndex].remove(dataIndex);
+                n--;
                 return node.value ;
             }
         }
