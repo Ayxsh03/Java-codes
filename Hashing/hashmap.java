@@ -16,6 +16,9 @@ public class hashmap {
         map.put("China", 180);
         System.out.println(map);
 
+        //Size
+        System.out.println(map.size());
+
         //Search
         if(map.containsKey("Japan")){
             System.out.println("key is present");
