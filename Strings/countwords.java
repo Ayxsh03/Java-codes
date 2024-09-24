@@ -1,7 +1,5 @@
 package Strings;
 
-import java.util.Scanner;
-
 public class countwords {
     public static int countWord(String str){
         int count=1;
@@ -13,8 +11,7 @@ public class countwords {
         return count;
     }
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        String str=sc.nextLine();
+        String str="jpwep io94334 eioevdnjcv oee e evwe q";
         int n=countWord(str);
         System.out.println(n);
     }

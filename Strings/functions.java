@@ -39,7 +39,7 @@ public class functions {
         System.out.println(s2+" "+ s2.length());//cd3 3
         String s3=sc.nextLine();
         System.out.println(s3+" "+ s3.length());// fghi jkl 9
-
+        sc.close();
     }
 
 }
