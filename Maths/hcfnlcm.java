@@ -49,7 +49,7 @@ public class hcfnlcm {
     }
 
     public static void main(String[] args) {
-        System.out.println(hcf2(64, 32));
-        System.out.println(lcm(14, 8));
+        System.out.println(hcf2(432, 288));
+        System.out.println(lcm(432, 288));
     }
 }
