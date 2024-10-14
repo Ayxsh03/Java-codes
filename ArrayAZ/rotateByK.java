@@ -28,7 +28,7 @@ public class rotateByK {
         k=k%n;
         //Copy last k elements in temp
         int[] temp=new int[k];
-        for(int i=n-k;i<k;i++){
+        for(int i=n-k;i<n;i++){
             temp[i-(n-k)]=nums[i];
         }
         //Shifting
@@ -36,7 +36,7 @@ public class rotateByK {
             nums[i+k]=nums[i];
         }
         //Put back
-        for(int i=k;i<n;i++){
+        for(int i=0;i<k;i++){
             nums[i]=temp[i];
         }
         return nums;
