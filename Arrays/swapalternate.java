@@ -13,6 +13,7 @@ public class swapalternate {
         for(int i=0;i<n;i++){
             arr[i]=sc.nextInt();
         }
+        sc.close();
         return arr;
     }
     public static void alternate(int[] arr){
@@ -36,5 +37,6 @@ public class swapalternate {
             alternate(arr);
             printArray(arr);
         }  
+        sc.close();
     }
 }

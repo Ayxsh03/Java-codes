@@ -13,6 +13,7 @@ public class spiral {
                 arr[i][j]=sc.nextInt();
             }
         }
+        sc.close();
         return arr;
     }
 

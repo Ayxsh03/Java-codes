@@ -13,6 +13,7 @@ public class basics {
                 arr[i][j]=sc.nextInt();
             }
         }
+        sc.close();
         return arr;
     }
     public static void printarr(int[][] arr){

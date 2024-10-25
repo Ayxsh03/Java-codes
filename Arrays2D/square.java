@@ -21,5 +21,6 @@ public class square {
         else{
             System.out.println("Matrix is not square");
         }
+        sc.close();
     }
 }
