@@ -9,6 +9,7 @@ public class allpairs {
             arr[i]=sc.nextInt();
         }
         return arr;
+        
     }
     public static void pairs(int []arr){
         for (int i = 0; i < arr.length; i++) {
@@ -21,6 +22,7 @@ public class allpairs {
         Scanner sc=new Scanner(System.in);
         int[] arr=takeInput();
         pairs(arr);
+        sc.close();
     }
 
 }

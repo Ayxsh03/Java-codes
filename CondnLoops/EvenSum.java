@@ -11,5 +11,6 @@ public class EvenSum {
             i++;
         }
         System.out.println(sum);
+        sc.close();
     }
 }

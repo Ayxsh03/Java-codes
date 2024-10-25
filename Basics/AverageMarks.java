@@ -18,5 +18,6 @@ public class AverageMarks {
         int avg=(int)((m1+m2+m3)/3);
         System.out.println(c);
         System.out.println(avg);
+        sc.close();
     }    
 }

@@ -3,6 +3,7 @@ package SearchSort;
 import java.util.*;
 public class linear {
     public static int[] takeInput(){
+        @SuppressWarnings("resource")
         Scanner sc=new Scanner(System.in);
         int size=sc.nextInt();
         int[] arr=new int[size];
@@ -23,6 +24,7 @@ public class linear {
         int []arr=takeInput();
         int key=sc.nextInt();
         linearSearch(arr, key);
+        sc.close();
     }
     
 }

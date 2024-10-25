@@ -29,6 +29,7 @@ public class TotalSalary {
         double TotalSalary=(sal+0.7*sal+allow-0.11*sal);
         int t=(int)Math.round(TotalSalary);
         System.out.println(t);
+        sc.close();
     }
     
 }

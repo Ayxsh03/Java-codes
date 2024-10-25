@@ -8,6 +8,7 @@ public class Multiply2num {
         long f1=sc.nextLong();
         long f2=sc.nextLong();
         System.out.println(f1*f2);
+        sc.close();
     }
     
 }

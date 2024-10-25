@@ -11,6 +11,7 @@ public class printarr {
             arr[i]=sc.nextInt();
         }
         return arr;
+        
     }
     
     public static void printArray(int[] arr){

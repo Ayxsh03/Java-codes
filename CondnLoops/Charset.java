@@ -30,6 +30,7 @@ public class Charset {
         // else{
         //     System.out.println("-1");
         // }
+        sc.close();
 
     }
     

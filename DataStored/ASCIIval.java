@@ -10,6 +10,7 @@ public class ASCIIval {
         char c=sc.next().charAt(0);
         int i= c;
         System.out.println(i);
+        sc.close();
     }
     
 }

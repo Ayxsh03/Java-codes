@@ -9,6 +9,7 @@ public class SumN {
             sum+=i;
         }
         System.out.println(sum);
+        sc.close();
     }
     
 }

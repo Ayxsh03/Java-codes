@@ -15,6 +15,7 @@ public class RectArea {
         int y2=sc.nextInt();
         int area=(x2-x1)*(y2-y1);
         System.out.println(area);
+        sc.close();
     }
     
 }
