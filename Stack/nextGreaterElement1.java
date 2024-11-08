@@ -14,21 +14,15 @@ import java.util.Stack;
 
 public class nextGreaterElement1 {
     
-    public static int[] nextGreaterElements(int[] nums) {
+    public static int[] nextGreaterElement(int[] nums) {
         int n = nums.length;
-        int nge[] = new int[n];
-        Stack < Integer > st = new Stack < > ();
-        for (int i = 2 * n - 1; i >= 0; i--) {
-            while (st.isEmpty() == false && st.peek() <= nums[i % n]) {
-                st.pop();
-            }
-
-            if (i < n) {
-                if (st.isEmpty() == false) nge[i] = st.peek();
-                else nge[i] = -1;
-            }
-
-            st.push(nums[i % n]);
+        int[] nge = new int[n];  
+        Stack<Integer> st = new Stack<>();
+        for (int i = n - 1; i >= 0; i--) {
+            while (!st.isEmpty() && st.peek() <= nums[i]) st.pop();
+            if (st.isEmpty()) nge[i] = -1;
+            else nge[i] = st.peek(); 
+            st.push(nums[i]);
         }
         return nge;
     }
@@ -43,7 +37,6 @@ public class nextGreaterElement1 {
         numberNGE.put(nums2[nums2.length - 1], -1);
 
         for (int i = nums2.length - 2; i >= 0; i--) {
-
             if (nums2[i] < numStack.peek()) {
                 numberNGE.put(nums2[i], numStack.peek());
                 numStack.push(nums2[i]);
@@ -65,4 +58,24 @@ public class nextGreaterElement1 {
             nums1[i] = numberNGE.get(nums1[i]);
         return nums1;
     }
+
+    public static int[] nextGreaterElementsII(int[] nums) {
+        int n = nums.length;
+        int nge[] = new int[n];
+        Stack < Integer > st = new Stack < > ();
+        for (int i = 2 * n - 1; i >= 0; i--) {
+            while (st.isEmpty() == false && st.peek() <= nums[i % n]) {
+                st.pop();
+            }
+
+            if (i < n) {
+                if (st.isEmpty() == false) nge[i] = st.peek();
+                else nge[i] = -1;
+            }
+
+            st.push(nums[i % n]);
+        }
+        return nge;
+    }
+
 }
