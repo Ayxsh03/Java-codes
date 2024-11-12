@@ -27,6 +27,19 @@ public class nextGreaterElement1 {
         return nge;
     }
 
+    public static int[] previousGreaterElementLeft(int[] nums) {
+        int n = nums.length;
+        int[] pge = new int[n];
+        Stack<Integer> st = new Stack<>();
+        for (int i = 0; i < n; i++) {
+            while (!st.isEmpty() && nums[st.peek()] <= nums[i]) st.pop();
+            if (st.isEmpty()) pge[i] = -1;
+            else pge[i] = st.peek(); 
+            st.push(nums[i]);
+        }
+        return pge;
+    }
+
     public int[] nextGreaterElementI(int[] nums1, int[] nums2) {
         if (nums2.length == 0 || nums1.length == 0)
             return new int[0];
