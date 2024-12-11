@@ -1,15 +1,12 @@
 package Trees;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class boundaryTraversal {
     private boolean isLeaf(TreeNode node) {
         return (node.left == null && node.right == null);
     }
 
-    // Add left boundary excluding leaves
     private void addLeftBoundary(TreeNode node, List<Integer> boundary) {
         while (node != null) {
             if (!isLeaf(node)) boundary.add(node.val);
@@ -17,65 +14,63 @@ public class boundaryTraversal {
         }
     }
 
-    // Add right boundary excluding leaves (in reverse order)
     private void addRightBoundary(TreeNode node, List<Integer> boundary) {
-        Stack<Integer> stack = new Stack<>();
         while (node != null) {
-            if (!isLeaf(node)) stack.push(node.val);
+            if (!isLeaf(node)) boundary.add(node.val);
             node = (node.right != null) ? node.right : node.left;
-        }
-        while (!stack.isEmpty()) {
-            boundary.add(stack.pop());
         }
     }
 
     // Add all leaf nodes in left-to-right order
-    private void addLeaves(TreeNode node, List<Integer> boundary) {
+    private void addLeavesLR(TreeNode node, List<Integer> boundary) {
         if (node == null) return;
         if (isLeaf(node)) {
             boundary.add(node.val);
         } else {
-            addLeaves(node.left, boundary);
-            addLeaves(node.right, boundary);
+            addLeavesLR(node.left, boundary);
+            addLeavesLR(node.right, boundary);
         }
     }
 
-    // Anticlockwise boundary traversal
-    public List<Integer> printBoundaryAnticlockwise(TreeNode root) {
+    // Add all leaf nodes in right-to-left order
+    private void addLeavesRL(TreeNode node, List<Integer> boundary) {
+        if (node == null) return;
+        if (isLeaf(node)) {
+            boundary.add(node.val);
+        } else {
+            addLeavesRL(node.right, boundary);
+            addLeavesRL(node.left, boundary);
+        }
+    }
+
+    public List<Integer> AntiClockwise(TreeNode root) {
         List<Integer> boundary = new ArrayList<>();
         if (root == null) return boundary;
 
-        // Add root (if not a leaf)
-        if (!isLeaf(root)) boundary.add(root.val);
-
-        // Add left boundary
+        boundary.add(root.val);
         addLeftBoundary(root.left, boundary);
+        addLeavesLR(root, boundary);
 
-        // Add all leaf nodes
-        addLeaves(root, boundary);
-
-        // Add right boundary (in reverse)
-        addRightBoundary(root.right, boundary);
+        List<Integer> rightBoundary = new ArrayList<>();
+        addRightBoundary(root.right,rightBoundary);
+        Collections.reverse(rightBoundary);
+        boundary.addAll(rightBoundary);
 
         return boundary;
     }
 
-    // Clockwise boundary traversal
-    public List<Integer> printBoundaryClockwise(TreeNode root) {
+    public List<Integer> Clockwise(TreeNode root) {
         List<Integer> boundary = new ArrayList<>();
         if (root == null) return boundary;
 
-        // Add root (if not a leaf)
-        if (!isLeaf(root)) boundary.add(root.val);
-
-        // Add right boundary
+        boundary.add(root.val);
         addRightBoundary(root.right, boundary);
+        addLeavesRL(root, boundary);
 
-        // Add all leaf nodes
-        addLeaves(root, boundary);
-
-        // Add left boundary (in reverse)
-        addLeftBoundary(root.left, boundary);
+        List<Integer> leftBoundary = new ArrayList<>();
+        addLeftBoundary(root.left, leftBoundary);
+        Collections.reverse(leftBoundary);
+        boundary.addAll(leftBoundary);
 
         return boundary;
     }
