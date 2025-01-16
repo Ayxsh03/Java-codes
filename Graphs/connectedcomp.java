@@ -7,6 +7,7 @@ public class connectedcomp {
 
     public int findCircleNum(int[][] isConnected) {
         int n = isConnected.length;
+        @SuppressWarnings("unchecked")
         ArrayList<Integer>[] graph = new ArrayList[n];
         for(int i=0; i<n; i++){
             graph[i] = new ArrayList<>();
@@ -29,7 +30,7 @@ public class connectedcomp {
         }
         return count;
     }
-    
+
     private void dfs(int node, ArrayList<Integer>[] graph){
         vis[node] = 1;
         for(int neighbor : graph[node]){
