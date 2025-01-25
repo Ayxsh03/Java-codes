@@ -19,6 +19,13 @@ public class shortestpathDAG{
         for (int i = 0; i < V; i++) {
             adj.add(new ArrayList<>());
         }
+        /*
+        for (int i = 0; i < M; i++) {
+            int u = edges[i][0];
+            int v = edges[i][1];
+            int wt = edges[i][2];
+            adj.get(u).add(new Pair(v, wt));
+        }*/
         for (int[] edge : edges) {
             adj.get(edge[0]).add(new Pair(edge[1], edge[2]));
         }
@@ -39,7 +46,11 @@ public class shortestpathDAG{
         while (!st.isEmpty()) {
             int node = st.pop();
 
-            // If node is reachable, relax its edges
+            /*
+            for (int i = 0; i < adj.get(node).size(); i++) {
+                int v = adj.get(node).get(i).first;
+                int wt = adj.get(node).get(i).second;        
+            */
             if (dist[node] != Integer.MAX_VALUE) {
                 for (Pair p : adj.get(node)) {
                     int v = p.node;
